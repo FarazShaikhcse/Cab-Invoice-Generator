@@ -3,11 +3,12 @@ public class Ride {
 
 	int userid;
 	double distance, time;
-
-	public Ride(int userid, double distance, double time) {
+	String rideType;
+	public Ride(int userid, double distance, double time, String rideType) {
 		this.distance = distance;
 		this.time = time;
 		this.userid = userid;
+		this.rideType = rideType;
 	}
 	
 	public int getUserid() {
@@ -34,4 +35,13 @@ public class Ride {
 		this.time = time;
 	}
 
+	public String getRideType() {
+		return rideType;
+	}
+
+	public void setRideType(String rideType) {
+		this.rideType = rideType;
+	}
+	
+	
 }
