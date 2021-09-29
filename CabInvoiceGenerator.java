@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class CabInvoiceGenerator {
 	private final int MINIMUM_FARE = 5;
 
@@ -7,7 +9,7 @@ public class CabInvoiceGenerator {
 		return cost > MINIMUM_FARE ? cost : MINIMUM_FARE;
 	}
 
-	public double generateTotalFare(Ride[] rides) {
+	public double generateTotalFare(List<Ride> rides) {
 		double totalFare = 0;
 		for (Ride ride : rides) {
 			totalFare += generateFare(ride.getDistance(), ride.getTime());
@@ -15,9 +17,9 @@ public class CabInvoiceGenerator {
 		return totalFare;
 	}
 
-	public Invoice getEnhancedInvoice(Ride[] rides) {
+	public Invoice getEnhancedInvoice(List<Ride> rides) {
 		double totalFare = generateTotalFare(rides);
-		Invoice invoice = new Invoice(rides.length, totalFare);
+		Invoice invoice = new Invoice(rides.size(), totalFare);
 
 		return invoice;
 
